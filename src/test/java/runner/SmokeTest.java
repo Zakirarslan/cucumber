@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml"
-               // "rerun:target/failedRerun.txt"
+                // "rerun:target/failedRerun.txt"
         },
         monochrome = false,
         features = "./src/test/resources/features/",  // provides path of the features folder
@@ -25,7 +25,7 @@ import org.junit.runner.RunWith;
 
 
 
-public class Runner {
+public class SmokeTest {
     /*
      ************* RUNNER CLASS ************
      * Runner class is used to run the feature files

@@ -15,6 +15,9 @@ public class Hooks {
     @After
     public void tearDown(Scenario scenario) {
         //System.out.println("After Hooks");
+       //byte[] screenshotpassed = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+       //scenario.attach(screenshotpassed, "image/png", "screenshot of failed step");
+        //Driver.closeDriver();
         if (scenario.isFailed()) {
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", "screenshot of failed step");
@@ -22,6 +25,7 @@ public class Hooks {
         }
     }
     @After ("@teapot and @Flower" )
+
     public void tearDownspecific(){
         System.out.println("specific");
     }

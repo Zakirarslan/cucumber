@@ -3,11 +3,13 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import pages.DataTable_Homepage;
-import utilities.ActionsUtils;
-import utilities.BrowserUtils;
-import utilities.JSUtils;
-import utilities.WaitUtils;
+import utilities.*;
+
+import java.util.List;
 
 public class DataTableStepDefs {
     DataTable_Homepage dataTable_homepage=new DataTable_Homepage();
@@ -73,4 +75,6 @@ public class DataTableStepDefs {
         Assert.assertTrue(dataTable_homepage.nameField.getText().contains(firstName));
 
     }
+
+
 }

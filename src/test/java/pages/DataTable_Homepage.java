@@ -34,5 +34,8 @@ public class DataTable_Homepage {
     @FindBy (xpath = "//td[@class='sorting_1']")
     public WebElement nameField;
 
+    @FindBy (xpath = "//table[@id='example']//tr/th[3]")
+    public WebElement thirdcolumn;
+
 
 }

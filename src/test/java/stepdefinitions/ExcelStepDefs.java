@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import pages.DataTable_Homepage;
 import utilities.BrowserUtils;
 import utilities.Driver;
@@ -36,18 +37,31 @@ public class ExcelStepDefs {
             System.out.println("eachData = " + eachData);
             BrowserUtils.clickWithTimeOut(dataTable_homePage.NewButton, 1);
             BrowserUtils.sendKeysWithTimeout(dataTable_homePage.firstName, eachData.get("first_name"), 1);
+            WaitUtils.waitFor(1);
             BrowserUtils.sendKeysWithTimeout(dataTable_homePage.lastName, eachData.get("last_name"), 1);
+            WaitUtils.waitFor(1);
             BrowserUtils.sendKeysWithTimeout(dataTable_homePage.position, eachData.get("position"), 1);
+            WaitUtils.waitFor(1);
             BrowserUtils.sendKeysWithTimeout(dataTable_homePage.office, eachData.get("office"), 1);
+            WaitUtils.waitFor(1);
 
-            BrowserUtils.sendKeysWithTimeout(dataTable_homePage.extension, eachData.get("extension"),1);
-            BrowserUtils.sendKeysWithTimeout(dataTable_homePage.startDate, eachData.get("startDate"), 1);
+
+           BrowserUtils.sendKeysWithTimeout(dataTable_homePage.extension, eachData.get("extension"),1);
+            WaitUtils.waitFor(1);
+            BrowserUtils.sendKeysWithTimeout(dataTable_homePage.startDate, eachData.get("start_date"), 1);
+            System.out.println(eachData.get("start_date"));
             BrowserUtils.sendKeysWithTimeout(dataTable_homePage.salary, eachData.get("salary"), 1);
-
+            WaitUtils.waitFor(1);
             BrowserUtils.clickWithTimeOut(dataTable_homePage.createButton, 2);
-            BrowserUtils.sendKeysWithTimeout(dataTable_homePage.searchBox, eachData.get("first_name"), 2);
-            Assert.assertTrue(dataTable_homePage.nameField.getText().contains(eachData.get("first_name")));
+            WaitUtils.waitFor(1);
+
+
+            BrowserUtils.sendKeysWithTimeout(dataTable_homePage.searchBox, eachData.get("first_name")+ Keys.ENTER, 2);
             WaitUtils.waitFor(2);
+            System.out.println(dataTable_homePage.nameField.getText());
+
+            Assert.assertTrue(dataTable_homePage.nameField.getText().contains(eachData.get("first_name")));
+            WaitUtils.waitFor(1);
 
             Driver.getDriver().navigate().refresh();
         }

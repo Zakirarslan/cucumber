@@ -1,4 +1,4 @@
-@excel
+@excel @smoke
 Feature: excel_automation
   Scenario: TC_01_user_creation
     Given user navigates to "https://editor.datatables.net/"

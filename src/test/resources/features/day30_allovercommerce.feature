@@ -1,3 +1,4 @@
+@smoke
 Feature: edit addresses
 
   Scenario: edit shipping address
